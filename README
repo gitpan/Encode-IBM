@@ -7,7 +7,7 @@ IBM-specific mappings.  The sources are from the ICU mapping repository:
 
 Encode::IBM uses the standard perl module install process:
 
-cpansign -v		# see SIGNATURE for details
+cpansign -v		# optional; see SIGNATURE for details
 perl Makefile.PL
 make			# or 'nmake' on Parse; see notes below
 make test

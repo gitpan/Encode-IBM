@@ -1,5 +1,5 @@
 package Encode::IBM;
-our $VERSION = "0.01";
+our $VERSION = '0.02';
  
 use Encode;
 use XSLoader;
@@ -11,6 +11,11 @@ __END__
 =head1 NAME
  
 Encode::IBM - IBM-specific encoding mappings
+
+=head1 VERSION
+
+This document describes version 0.02 of Encode::IBM, released
+December 30, 2004.
  
 =head1 SYNOPSIS
 

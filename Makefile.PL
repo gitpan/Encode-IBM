@@ -20,7 +20,7 @@ my ($enc2xs, $encode_h) = ();
 PATHLOOP:
 for my $d (@Config{qw/bin sitebin vendorbin/}, 
 	   (split /$Config{path_sep}/o, $ENV{PATH})){
-    for my $f (qw/enc2xs enc2xs5.7.3/){
+    for my $f (map {$_, "$_.bat"} ('enc2xs', "enc2xs$Config{version}")) {
         my $path = File::Spec->catfile($d, $f);
         -r $path and $enc2xs = $path and last PATHLOOP;
     }
@@ -43,7 +43,7 @@ WriteMakefile(
 	      NAME		=> 'Encode::'.$name,
 	      ABSTRACT		=> 'IBM-specific encoding mappings',
 	      AUTHOR		=> 'Autrijus Tang <autrijus@autrijus.org>',
-	      VERSION_FROM	=> "$name.pm",
+	      VERSION_FROM	=> "lib/Encode/$name.pm",
 	      OBJECT		=> '$(O_FILES)',
 	      'dist'		=> {
 		  COMPRESS	=> 'gzip -9f',
