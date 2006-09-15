@@ -11,7 +11,7 @@ use Config;
 # Please edit the following to the taste!
 my $name = 'IBM';
 my %tables = (
-	     IBM_t   => [ 'ucm/ibm-947.ucm','ucm/ibm-835.ucm' ],
+	     IBM_t   => [ 'ucm/ibm-947.ucm','ucm/ibm-835.ucm','ucm/ibm-937.ucm' ],
 	     );
 
 #### DO NOT EDIT BEYOND THIS POINT!
@@ -42,7 +42,7 @@ WriteMakefile(
               INC		=> "-I$encode_h",
 	      NAME		=> 'Encode::'.$name,
 	      ABSTRACT		=> 'IBM-specific encoding mappings',
-	      AUTHOR		=> 'Autrijus Tang <autrijus@autrijus.org>',
+	      AUTHOR		=> 'Audrey Tang <cpan@audreyt.org>',
 	      VERSION_FROM	=> "lib/Encode/$name.pm",
 	      OBJECT		=> '$(O_FILES)',
 	      'dist'		=> {

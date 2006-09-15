@@ -16,7 +16,7 @@ enc2xs -C		# optional; updates Encode.pm's on-demand loading DB
 
 * Copyright
 
-Copyright 2004 by Autrijus Tang <autrijus@autrijus.org>.
+Copyright 2004, 2005, 2006 by Audrey Tang <cpan@audreyt.org>.
 
 All rights reserved.  You can redistribute and/or modify
 this bundle under the same terms as Perl itself.

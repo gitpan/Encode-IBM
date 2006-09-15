@@ -1,3 +1,7 @@
+[Changes for 0.03 - 2006-09-15]
+
+* Add ibm-937 and ibm-937-sosi encodings.
+
 [Changes for 0.02 - 2004-12-30]
 
 * First really working CPAN release.

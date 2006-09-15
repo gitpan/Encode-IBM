@@ -1,9 +1,11 @@
 Changes
+lib/Encode/IBM.pm
+lib/Encode/IBM/947SOSI.pm
 Makefile.PL
 MANIFEST			This list of files
+META.yml			Module meta-data (added by MakeMaker)
 README
 t/IBM.t
-lib/Encode/IBM.pm
 ucm/ibm-835.ucm
+ucm/ibm-937.ucm
 ucm/ibm-947.ucm
-META.yml                                 Module meta-data (added by MakeMaker)
