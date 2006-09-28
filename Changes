@@ -1,6 +1,12 @@
-[Changes for 0.03 - 2006-09-15]
+[Changes for 0.05 - 2006-09-28]
 
-* Add ibm-937 and ibm-937-sosi encodings.
+* Add ibm-835-sosi encoding.
+
+* Run "enc2xs -C" on "make install" by default.
+
+[Changes for 0.04 - 2006-09-15]
+
+* Add ibm-937 and ibm-947-sosi encodings.
 
 [Changes for 0.02 - 2004-12-30]
 

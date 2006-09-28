@@ -1,4 +1,4 @@
-package Encode::IBM::947SOSI;
+package Encode::IBM::835SOSI;
 
 use strict;
 
@@ -8,23 +8,23 @@ $VERSION = do { my @r = (q$Revision: #1 $ =~ /\d+/g); sprintf "%d."."%02d" x $#r
 use Encode ();
 
 use base qw(Encode::Encoding);
-__PACKAGE__->Define('ibm-947-sosi');
+__PACKAGE__->Define('ibm-835-sosi');
 
 my $base37;
-my $base947;
+my $base835;
 
 sub decode
 {
     my ($obj,$str,$chk) = @_;
 
     $base37 ||= Encode::find_encoding('cp37');
-    $base947 ||= Encode::find_encoding('ibm-947');
+    $base835 ||= Encode::find_encoding('ibm-835');
 
     my $out;
     foreach my $chunk (split(/\x0E([^\x0F]*\x0F)/, $str)) {
         if ($chunk =~ /\x0F\z/) {
             chop $chunk;
-            $out .= $base947->decode($chunk);
+            $out .= $base835->decode($chunk);
         }
         else {
             $out .= $base37->decode($chunk);
@@ -38,7 +38,7 @@ sub encode
     my ($obj,$str,$chk) = @_;
 
     $base37 ||= Encode::find_encoding('cp37');
-    $base947 ||= Encode::find_encoding('ibm-947');
+    $base835 ||= Encode::find_encoding('ibm-835');
 
     if ($str =~ s/^([\x00-\xff]+)//) {
         # english
@@ -48,7 +48,7 @@ sub encode
     elsif ($str =~ s/^([^\x00-\xff]+)//) {
         # chinese - shift in + shift out
         my $sub = $1;
-        return "\x0E".$base947->encode($sub)."\x0F".$obj->encode($str, $chk);
+        return "\x0E".$base835->encode($sub)."\x0F".$obj->encode($str, $chk);
     }
 }
 
@@ -58,8 +58,6 @@ __END__
 
 =head1 NAME
 
-Encode::IBM::947SOSI
-
-=cut
+Encode::IBM::835SOSI
 
 =cut

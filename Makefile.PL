@@ -58,6 +58,17 @@ WriteMakefile(
 	      XSOPT => '-nolinenumbers',
 	      );
 
+# add 'enc2xs -C' to the 'install' target
+{
+    local $/;
+    open MAKEFILE, 'Makefile' or die "Can't read Makefile: $!";
+    my $makefile = <MAKEFILE>;
+    close MAKEFILE;
+    $makefile =~ s/(install :: .*)/$1\n\t\@$enc2xs -C/;
+    open MAKEFILE, '>Makefile' or die "Can't write to Makefile: $!";
+    print MAKEFILE $makefile;
+    close MAKEFILE;
+}
 package MY;
 
 sub post_initialize
