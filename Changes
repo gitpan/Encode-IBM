@@ -1,3 +1,15 @@
+[Changes for 0.06 - 2007-09-25]
+
+* LICENSING CHANGE: This compilation and all individual files in it
+  are now under the permissive "MIT" license.  See the COPYRIGHT
+  section in README for the new terms.
+
+* Added ibm-939 and ibm-939-sosi encoding.
+
+* Added ibm-835-sosi-tsgh, a variant of ibm-835-sosi with 
+  0x28/0x29 instead of 0x0E/0x0F as shift codes, plus a few
+  control codes for font sizing.
+
 [Changes for 0.05 - 2006-09-28]
 
 * Add ibm-835-sosi encoding.

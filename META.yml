@@ -1,11 +1,14 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Encode-IBM
-version:      0.05
-version_from: lib/Encode/IBM.pm
-installdirs:  site
-requires:
+--- #YAML:1.0
+name:                Encode-IBM
+version:             0.06
+abstract:            IBM-specific encoding mappings
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.31_01
+distribution_type:   module
+requires:     
     Encode:                        1.41
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
+author:
+    - Audrey Tang <cpan@audreyt.org>

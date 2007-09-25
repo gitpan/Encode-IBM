@@ -1,4 +1,4 @@
-package Encode::IBM::947SOSI;
+package Encode::IBM::835SOSI::TSGH;
 
 use strict;
 use vars qw($VERSION);
@@ -7,23 +7,29 @@ $VERSION = '0.01';
 use Encode ();
 
 use base qw(Encode::Encoding);
-__PACKAGE__->Define('ibm-947-sosi');
+__PACKAGE__->Define('ibm-835-sosi-tsgh');
 
 my $base37;
-my $base947;
+my $base835;
 
 sub decode
 {
     my ($obj,$str,$chk) = @_;
 
     $base37 ||= Encode::find_encoding('cp37');
-    $base947 ||= Encode::find_encoding('ibm-947');
+    $base835 ||= Encode::find_encoding('ibm-835');
+    #$str =~ s/\x00/K/g;
+    $str =~ s/\x00/\x40/g;
+    $str =~ s/\x30\xe1/Fg/g;    # MAKE SMALL
+    $str =~ s/\x30\xe0//g;      # MAKE LARGE
+    #$str =~ s/\x30\xe0/Mh/g;
 
     my $out;
-    foreach my $chunk (split(/\x0E([^\x0F]*\x0F)/, $str)) {
-        if ($chunk =~ /\x0F\z/) {
+    foreach my $chunk (split(/\x28([^\x29]*\x29)/, $str)) {
+        if ($chunk =~ /\x29\z/) {
             chop $chunk;
-            $out .= $base947->decode($chunk);
+            $chunk =~ s/\@\@/iJ/g;
+            $out .= $base835->decode($chunk);
         }
         else {
             $out .= $base37->decode($chunk);
@@ -37,7 +43,7 @@ sub encode
     my ($obj,$str,$chk) = @_;
 
     $base37 ||= Encode::find_encoding('cp37');
-    $base947 ||= Encode::find_encoding('ibm-947');
+    $base835 ||= Encode::find_encoding('ibm-835');
 
     if ($str =~ s/^([\x00-\xff]+)//) {
         # english
@@ -47,7 +53,7 @@ sub encode
     elsif ($str =~ s/^([^\x00-\xff]+)//) {
         # chinese - shift in + shift out
         my $sub = $1;
-        return "\x0E".$base947->encode($sub)."\x0F".$obj->encode($str, $chk);
+        return "\x28".$base835->encode($sub)."\x29".$obj->encode($str, $chk);
     }
 }
 
@@ -57,8 +63,6 @@ __END__
 
 =head1 NAME
 
-Encode::IBM::947SOSI
-
-=cut
+Encode::IBM::835SOSI::TSGH
 
 =cut

@@ -1,24 +1,57 @@
-This is the README file for Encode::IBM, an encoding extension of
-IBM-specific mappings.  The sources are from the ICU mapping repository:
+NAME
+    Encode::IBM - IBM-specific encoding mappings
 
-    http://oss.software.ibm.com/cvs/icu/charset/data/ucm/
+VERSION
+    This document describes version 0.06 of Encode::IBM, released September
+    25, 2007.
 
-* Installation
+SYNOPSIS
+        use Encode;
+        use Encode::IBM;
+        binmode( STDIN, ':encoding(ibm-835)' );
+        binmode( STDOUT, ':encoding(ibm-947-sosi)' );
 
-Encode::IBM uses the standard perl module install process:
+DESCRIPTIONS
+    This module provides encoding extensions of IBM-specific mappings. The
+    sources are from the ICU mapping repository:
 
-cpansign -v		# optional; see SIGNATURE for details
-perl Makefile.PL
-make			# or 'nmake' on Parse; see notes below
-make test
-make install
-enc2xs -C		# optional; updates Encode.pm's on-demand loading DB
+        http://oss.software.ibm.com/cvs/icu/charset/data/ucm/
 
-* Copyright
+ENCODINGS
+        ibm-835
+        ibm-937
+        ibm-939
+        ibm-947
 
-Copyright 2004, 2005, 2006 by Audrey Tang <cpan@audreyt.org>.
+        ibm-835-sosi
+        ibm-939-sosi
+        ibm-947-sosi
 
-All rights reserved.  You can redistribute and/or modify
-this bundle under the same terms as Perl itself.
+SEE ALSO
+    Encode
 
-See <http://www.perl.com/perl/misc/Artistic.html>.
+COPYRIGHT
+    Copyright 2004, 2005, 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
+
+    This software is released under the MIT license cited below.
+
+  The "MIT" License
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

@@ -11,7 +11,7 @@ use Config;
 # Please edit the following to the taste!
 my $name = 'IBM';
 my %tables = (
-	     IBM_t   => [ 'ucm/ibm-947.ucm','ucm/ibm-835.ucm','ucm/ibm-937.ucm' ],
+	     IBM_t   => [ 'ucm/ibm-947.ucm','ucm/ibm-835.ucm','ucm/ibm-937.ucm', 'ucm/ibm-939.ucm' ],
 	     );
 
 #### DO NOT EDIT BEYOND THIS POINT!
@@ -45,6 +45,7 @@ WriteMakefile(
 	      AUTHOR		=> 'Audrey Tang <cpan@audreyt.org>',
 	      VERSION_FROM	=> "lib/Encode/$name.pm",
 	      OBJECT		=> '$(O_FILES)',
+              SIGN              => do { local $@; eval { ExtUtils::MakeMaker->VERSION(6.31) } },
 	      'dist'		=> {
 		  COMPRESS	=> 'gzip -9f',
 		  SUFFIX	=> 'gz',
