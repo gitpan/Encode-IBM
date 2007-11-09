@@ -45,7 +45,7 @@ WriteMakefile(
 	      AUTHOR		=> 'Audrey Tang <cpan@audreyt.org>',
 	      VERSION_FROM	=> "lib/Encode/$name.pm",
 	      OBJECT		=> '$(O_FILES)',
-              SIGN              => do { local $@; eval { ExtUtils::MakeMaker->VERSION(6.31) } },
+              SIGN              => (do { local $@; eval { ExtUtils::MakeMaker->VERSION(6.31) } } || 0),
 	      'dist'		=> {
 		  COMPRESS	=> 'gzip -9f',
 		  SUFFIX	=> 'gz',

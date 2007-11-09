@@ -1,15 +1,25 @@
 package Encode::IBM;
  
+use strict;
 use Encode;
-use XSLoader;
 use Encode::IBM::835SOSI;
 use Encode::IBM::835SOSI::TSGH;
 use Encode::IBM::947SOSI;
 use Encode::IBM::939SOSI;
 
 BEGIN {
-    our $VERSION = '0.06';
-    XSLoader::load(__PACKAGE__, $VERSION)
+    our $VERSION = '0.07';
+
+    local $@;
+    eval {
+        require XSLoader;
+        XSLoader::load(__PACKAGE__, $VERSION);
+        1;
+    } or do {
+        require DynaLoader;
+        push our @ISA, 'DynaLoader';
+        __PACKAGE__->bootstrap($VERSION);
+    };
 };
 
 1;
@@ -21,8 +31,8 @@ Encode::IBM - IBM-specific encoding mappings
 
 =head1 VERSION
 
-This document describes version 0.06 of Encode::IBM, released
-September 25, 2007.
+This document describes version 0.07 of Encode::IBM, released
+November 9, 2007.
  
 =head1 SYNOPSIS
 

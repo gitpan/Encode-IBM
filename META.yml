@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Encode-IBM
-version:             0.06
+version:             0.07
 abstract:            IBM-specific encoding mappings
 license:             ~
 generated_by:        ExtUtils::MakeMaker version 6.31_01

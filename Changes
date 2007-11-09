@@ -1,3 +1,11 @@
+[Changes for 0.07 - 2007-11-09]
+
+* Fix Win32 building problems caused by XSLoader not functioning.
+  Reported by: Sam Chen
+
+* Fix Makefile.PL's issue with earlier MakeMaker without SIGN=>1 support.
+  Reported by: Sam Chen
+
 [Changes for 0.06 - 2007-09-25]
 
 * LICENSING CHANGE: This compilation and all individual files in it
