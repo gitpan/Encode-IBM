@@ -2,7 +2,7 @@ package Encode::IBM::835SOSI::TSGH;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.10';
+$VERSION = '1.01';
 
 use Encode ();
 

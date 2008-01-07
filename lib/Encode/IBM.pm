@@ -9,7 +9,7 @@ use Encode::IBM::947SOSI;
 use Encode::IBM::939SOSI;
 
 BEGIN {
-    our $VERSION = '0.10';
+    our $VERSION = '0.11';
 
     local $@;
     eval {
@@ -33,7 +33,7 @@ Encode::IBM - IBM-specific encoding mappings
 
 =head1 VERSION
 
-This document describes version 0.10 of Encode::IBM, released
+This document describes version 0.11 of Encode::IBM, released
 January 7, 2008.
 
 =head1 SYNOPSIS

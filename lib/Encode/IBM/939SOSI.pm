@@ -2,7 +2,7 @@ package Encode::IBM::939SOSI;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.10';
+$VERSION = '1.01';
 
 use Encode ();
 
