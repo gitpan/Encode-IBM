@@ -1,5 +1,6 @@
 package Encode::IBM;
  
+use 5.008;
 use strict;
 use Encode;
 use Encode::IBM::835SOSI;
@@ -8,7 +9,7 @@ use Encode::IBM::947SOSI;
 use Encode::IBM::939SOSI;
 
 BEGIN {
-    our $VERSION = '0.07';
+    our $VERSION = '0.10';
 
     local $@;
     eval {
@@ -23,6 +24,7 @@ BEGIN {
 };
 
 1;
+
 __END__
 
 =head1 NAME
@@ -31,9 +33,9 @@ Encode::IBM - IBM-specific encoding mappings
 
 =head1 VERSION
 
-This document describes version 0.07 of Encode::IBM, released
-November 9, 2007.
- 
+This document describes version 0.10 of Encode::IBM, released
+January 7, 2008.
+
 =head1 SYNOPSIS
 
     use Encode;
@@ -65,7 +67,7 @@ L<Encode>
 
 =head1 COPYRIGHT
 
-Copyright 2004, 2005, 2006, 2007 by Audrey Tang E<lt>cpan@audreyt.orgE<gt>.
+Copyright 2004, 2005, 2006, 2007, 2008 by Audrey Tang E<lt>cpan@audreyt.orgE<gt>.
 
 This software is released under the MIT license cited below.
 

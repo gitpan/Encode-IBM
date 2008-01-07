@@ -2,8 +2,8 @@ NAME
     Encode::IBM - IBM-specific encoding mappings
 
 VERSION
-    This document describes version 0.06 of Encode::IBM, released September
-    25, 2007.
+    This document describes version 0.11 of Encode::IBM, released January 7,
+    2008.
 
 SYNOPSIS
         use Encode;
@@ -31,7 +31,8 @@ SEE ALSO
     Encode
 
 COPYRIGHT
-    Copyright 2004, 2005, 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
+    Copyright 2004, 2005, 2006, 2007, 2008 by Audrey Tang
+    <cpan@audreyt.org>.
 
     This software is released under the MIT license cited below.
 

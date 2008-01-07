@@ -1,14 +1,13 @@
 --- #YAML:1.0
 name:                Encode-IBM
-version:             0.07
-abstract:            IBM-specific encoding mappings
+version:             0.10
+abstract:            ~
 license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.31_01
+author:              ~
+generated_by:        ExtUtils::MakeMaker version 6.42
 distribution_type:   module
 requires:     
     Encode:                        1.41
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
-author:
-    - Audrey Tang <cpan@audreyt.org>
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
